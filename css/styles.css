@@ -13,37 +13,182 @@ img {
 	display: block;
 }
 
-html {
-	font-family: "Rubik", sans-serif;
-	font-size: 18px;
-}
-
 :root {
+	--color-white: hsl(0, 0%, 100%);
 	--color-blue: hsl(246, 80%, 60%);
-	--color-light-red: hsl(15, 100%, 70%);
+	--color-light-red-1: hsl(15, 100%, 70%);
 	--color-soft-blue: hsl(195, 74%, 62%);
 	--color-light-red: hsl(348, 100%, 68%);
 	--color-lime-green: hsl(145, 58%, 55%);
 	--color-violet: hsl(264, 64%, 52%);
 	--color-soft-orange: hsl(43, 84%, 65%);
+
 	--color-very-dark-blue: hsl(226, 43%, 10%);
 	--color-dark-blue: hsl(235, 46%, 20%);
 	--color-desaturated-blue: hsl(235, 45%, 61%);
 	--color-pale-blue: hsl(236, 100%, 87%);
+
+	--border-radius: 1rem;
 }
 
+html {
+	font-family: "Rubik", sans-serif;
+	font-size: 18px;
+	color: var(--color-pale-blue);
+	font-weight: 300;
+}
 
+body {
+	background-color: var(--color-very-dark-blue);
+}
 
+main {
+	display: grid;
+	grid-auto-columns: auto;
+	row-gap: 1.3rem;
+	width: 90%;
+	margin: 5rem auto 1rem auto;
+}
 
+.card-person {
+	position: relative;
+	background-color: var(--color-dark-blue);
+	height: 11.3rem;
+	border-radius: var(--border-radius);
+}
 
+/* card-person name/image */
+.card-person div:first-child {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--color-blue);
+	column-gap: 1rem;
+	height: 65%;
+	border-radius: var(--border-radius);
+}
 
+/* card-person image */
+.card-person figure {
+	width: 4rem;
+	border: 3px solid var(--color-white);
+	border-radius: 50%;
+}
 
+/* card-person "Report for" text */
+.card-person p:first-child {
+	font-size: .8rem;
+}
 
+/* card-person name */
+.card-person p:nth-child(2) {
+	font-size: 1.3rem;
+	font-weight: 300;
+	color: var(--color-white);
+}
 
+/* three dots */
+.card img {
+	display: inline;
+	width: 20px;
+}
 
+nav {
+	position: absolute;
+	display: flex;
+	justify-content: space-around;
+	width: 100%;
+	bottom: 1.3rem;
+	color: var(--color-desaturated-blue);
+}
 
+/* all cards except card-person */
+.card {
+	position: relative;
+	height: 9rem;
+	border-radius: var(--border-radius);
+	background-position-y: -.6rem;
+	background-position-x: 95%;
+	background-repeat: no-repeat;
+}
 
+/* work card */
+.card:nth-child(2) {
+	background-color: var(--color-light-red-1);
+	background-image: url("../images/icon-work.svg");
+}
 
+/* play card */
+.card:nth-child(3) {
+	background-color: var(--color-soft-blue);
+	background-image: url("../images/icon-play.svg");
+}
+
+/* study card */
+.card:nth-child(4) {
+	background-color: var(--color-light-red);
+	background-image: url("../images/icon-study.svg");
+}
+
+/* excercise card */
+.card:nth-child(5) {
+	background-color: var(--color-lime-green);
+	background-image: url("../images/icon-exercise.svg");
+}
+
+/* social card */
+.card:nth-child(6) {
+	background-color: var(--color-violet);
+	background-image: url("../images/icon-social.svg");
+}
+
+/* self care card */
+.card:nth-child(7) {
+	background-color: var(--color-soft-orange);
+	background-image: url("../images/icon-self-care.svg");
+}
+
+/* container for card name and stats */
+.card-stats {
+	position: absolute;
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	justify-content: center;
+	bottom: 0;
+	height: 75%;
+	width: 100%;
+	padding: 0 7%;
+	background-color: var(--color-dark-blue);
+	border-radius: var(--border-radius);
+}
+
+/* all daily, weekly, montly text */
+.card-stats [class^="stats-"] {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	align-items: center;
+	display: none;
+}
+
+/* daily, weekly, monthly stats current hours */
+.card-stats [class^="stats-"] > span:first-child {
+	font-size: 2rem;
+	color: var(--color-white);
+	font-weight:  300;
+}
+
+/* card title and ellipsis */
+.card-stats > span:first-child {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	font-weight: 500;
+	color: var(--color-white);
+	padding-bottom: .5rem;
+}
 
 .attribution {
 	font-size: 11px;
