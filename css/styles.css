@@ -29,6 +29,8 @@ img {
 	--color-pale-blue: hsl(236, 100%, 87%);
 
 	--border-radius: 1rem;
+
+	--card-width: 337.5px;
 }
 
 html {
@@ -40,15 +42,16 @@ html {
 
 body {
 	background-color: var(--color-very-dark-blue);
+	padding: 0 20px;
 }
 
 main {
 	display: grid;
-	grid-auto-columns: auto;
-	row-gap: 1.3rem;
-	width: 90%;
+	grid-template-columns: 100%;
+	grid-auto-rows: auto;
+	row-gap: 1rem;
+	width: 100%;
 	margin: 5rem auto 1rem auto;
-	container: container-main / inline-size;
 }
 
 .card-person {
@@ -112,6 +115,8 @@ nav {
 	background-position-y: -.6rem;
 	background-position-x: 95%;
 	background-repeat: no-repeat;
+	justify-self: center;
+	width: var(--card-width);
 }
 
 /* work card */
@@ -152,12 +157,12 @@ nav {
 
 /* container for card name and stats */
 .card-stats {
-	position: absolute;
+	position: relative;
 	display: flex;
 	flex-flow: column;
 	align-items: center;
 	justify-content: center;
-	bottom: 0;
+	top: 25%;
 	height: 75%;
 	width: 100%;
 	padding: 0 7%;
@@ -191,7 +196,22 @@ nav {
 	padding-bottom: .5rem;
 }
 
-@container container-main (width > 450px) {
+@media (min-width: 740px) {
+
+	main {
+		grid-template-columns: auto auto;
+		grid-template-rows: auto auto auto;
+		column-gap: 1rem;
+		max-width: 700px;
+	}
+
+	.card-person {
+		grid-column: span 2;
+	}
+}
+
+
+/* @media (width > 992px) {
 	.card-stats [class^="stats-"] {
 		flex-flow: column nowrap;
 		align-items: flex-start;
@@ -201,7 +221,7 @@ nav {
 		height: 10rem;
 		max-width: 250px;
 	}
-}
+} */
 
 .attribution {
 	font-size: 11px;
