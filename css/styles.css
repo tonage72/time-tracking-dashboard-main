@@ -48,6 +48,7 @@ main {
 	row-gap: 1.3rem;
 	width: 90%;
 	margin: 5rem auto 1rem auto;
+	container: container-main / inline-size;
 }
 
 .card-person {
@@ -188,6 +189,18 @@ nav {
 	font-weight: 500;
 	color: var(--color-white);
 	padding-bottom: .5rem;
+}
+
+@container container-main (width > 450px) {
+	.card-stats [class^="stats-"] {
+		flex-flow: column nowrap;
+		align-items: flex-start;
+	}
+
+	.card {
+		height: 10rem;
+		max-width: 250px;
+	}
 }
 
 .attribution {
