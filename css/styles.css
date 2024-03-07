@@ -30,7 +30,7 @@ img {
 
 	--border-radius: 1rem;
 
-	--card-width: 337.5px;
+	--card-width: clamp(6rem, 100%, 18.7rem);
 }
 
 html {
@@ -60,6 +60,7 @@ main {
 	background-color: var(--color-dark-blue);
 	height: 11.3rem;
 	border-radius: var(--border-radius);
+	width: clamp(6.25rem, 100%, 1000px);
 }
 
 /* card-person name/image */
@@ -221,7 +222,7 @@ nav {
 
 	.card {
 		width: 16rem;
-		height: 300px;
+		height: 250px;
 	}
 
 	main {
@@ -251,13 +252,52 @@ nav {
 		grid-row: span 2;
 	}
 
+	/* card-person name/image */
 	.card-person div:first-child {
 		flex-flow: column nowrap;
 		align-items: flex-start;
 		justify-content: flex-start;
+		padding: 1rem;
 	}
 
-	
+	/* card-person image */
+	.card-person figure {
+		width: 5rem;
+	}
+
+	/* card-person "Report for" text */
+	.card-person p:first-child {
+		font-size: 1rem;
+		padding-top: 2rem;
+	}
+
+	/* card-person name */
+	.card-person p:nth-child(2) {
+		font-size: 2.3rem;
+	}
+
+	nav {
+		flex-flow: column nowrap;
+		padding-left: 1rem;
+		justify-content: baseline;
+		gap: 1rem;
+		padding-bottom: 1rem;
+	}
+
+	/* all daily, weekly, montly text */
+	.card-stats [class^="stats-"] {
+		font-size: 1.3rem;
+	}
+
+	/* daily, weekly, monthly stats current hours */
+	.card-stats [class^="stats-"] > span:first-child {
+		font-size: 3.5rem;
+	}
+
+	/* card title and ellipsis */
+	.card-stats > span:first-child {
+		font-size: 1.5rem;
+	}
 }
 
 .attribution {
