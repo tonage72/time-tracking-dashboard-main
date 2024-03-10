@@ -51,6 +51,7 @@ function fetchJSON(navSelection) {
 					break
 			}
 		})
+		.catch(error => console.log(error));
 }
 
 function hourDetermination(hours) {
