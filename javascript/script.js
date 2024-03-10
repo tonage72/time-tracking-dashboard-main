@@ -18,7 +18,7 @@ const hoursDailyPrevious = document.querySelectorAll('.hours-daily-previous');
 const hoursWeeklyPrevious = document.querySelectorAll('.hours-weekly-previous');
 const hoursMonthlyPrevious = document.querySelectorAll('.hours-monthly-previous');
 
-function fetchJSON(navSelection) {
+async function fetchJSON(navSelection) {
 	fetch('../data.json')
 		.then(res => {
 			return res.json();
