@@ -198,6 +198,22 @@ nav {
 	padding-bottom: .5rem;
 }
 
+@media (max-width: 340px) {
+		.card-stats [class^="stats-"] {
+			flex-flow: column nowrap;
+			align-items: flex-start;
+		}
+
+		nav {
+			height: 11%;
+			flex-flow: column nowrap;
+			justify-content: baseline;
+			gap: 0;
+			padding: 0 0 0 1rem;
+		}
+
+}
+
 @media (min-width: 740px) {
 
 	main {
@@ -205,6 +221,10 @@ nav {
 		grid-template-rows: auto auto auto;
 		column-gap: 1rem;
 		max-width: 700px;
+	}
+
+	.card {
+		width: 336px;
 	}
 
 	.card-person {
