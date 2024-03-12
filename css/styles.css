@@ -109,6 +109,10 @@ nav {
 	color: var(--color-desaturated-blue);
 }
 
+nav > span {
+	cursor: pointer;
+}
+
 /* all cards except card-person */
 .card {
 	position: relative;
